@@ -4,13 +4,15 @@
 
 var express = require('express'),
   fs = require('fs'),
-  config = require('./config');
+  config = require('./config'),
+  http = require('http');
 
-var app = module.exports = express.createServer();
+var app = express();
 
 // Configuration
 app.configure(function()
 {
+  app.set('port', process.env.PORT || config.port);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
   app.use(express.bodyParser());
@@ -31,15 +33,8 @@ app.configure('production', function()
   app.use(express.errorHandler());
 });
 
-//dynamic helpers
-app.dynamicHelpers(
-{
-  flash: function(req, res){ return req.flash(); }
-});
-
 require('./boot')(app, config, fs);
 
-app.listen(config.port, function()
-{
-  console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
+http.createServer(app).listen(app.get('port'), function(){
+  console.log("Express server listening on port " + app.get('port'));
 });

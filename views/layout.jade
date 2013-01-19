@@ -6,8 +6,3 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(src='/javascripts/init.js')
   body
-    #notifications
-      - for (var i in flash)
-        - for (var j in flash[i])
-          div(class='.' + i) #{flash[i][j]}
-    != body
