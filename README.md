@@ -1,4 +1,4 @@
-NodeJS (0.6.x) / ExpressJS (2.5.x) Starting Point
+NodeJS (0.8.x) / ExpressJS (3.0.x) Starting Point
 ====================================================
 
 This is a starting point for a NodeJS/Express project that aims at keeping the file structure relatively tidy.
