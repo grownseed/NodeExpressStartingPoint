@@ -3,13 +3,13 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "express": "2.5.x",
+    "express": "3.0.x",
     "jade": ">= 0.0.1"
   },
   "scripts": {
     "start": "app.js"
   },
   "engines": {
-    "node": "0.6.x"
+    "node": "0.8.x"
   }
 }
