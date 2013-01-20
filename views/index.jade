@@ -1,2 +1,10 @@
-h1#title
-  a(href='/')= title
+!!!
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/normalize.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='/javascripts/init.js')
+  body
+    h1#title
+    a(href='/')= title
